@@ -180,26 +180,44 @@ var lyr_PRRPaisajesRelevanciaRegional_8 = new ol.layer.Vector({
                 interactive: true,
                 title: '<img src="styles/legend/PRRPaisajesRelevanciaRegional_8.png" /> PRR PaisajesRelevanciaRegional'
             });
-var format_SNCZIzonasinundacion_9 = new ol.format.GeoJSON();
-var features_SNCZIzonasinundacion_9 = format_SNCZIzonasinundacion_9.readFeatures(json_SNCZIzonasinundacion_9, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:25830'});
-var jsonSource_SNCZIzonasinundacion_9 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_SNCZIzonasinundacion_9.addFeatures(features_SNCZIzonasinundacion_9);
-var lyr_SNCZIzonasinundacion_9 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_SNCZIzonasinundacion_9, 
-                style: style_SNCZIzonasinundacion_9,
-                popuplayertitle: 'SNCZI zonas inundacion',
-                interactive: true,
-    title: 'SNCZI zonas inundacion<br />\
-    <img src="styles/legend/SNCZIzonasinundacion_9_0.png" /> Q Periodo de retorno T10<br />\
-    <img src="styles/legend/SNCZIzonasinundacion_9_1.png" /> Q Periodo de retorno T100<br />\
-    <img src="styles/legend/SNCZIzonasinundacion_9_2.png" /> Q Periodo de retorno T500<br />\
-    <img src="styles/legend/SNCZIzonasinundacion_9_3.png" /> Z.I. FRECUENTE (50 AÑOS)<br />\
-    <img src="styles/legend/SNCZIzonasinundacion_9_4.png" /> Z.I. PROBABILIDAD ALTA (10 AÑOS)<br />\
-    <img src="styles/legend/SNCZIzonasinundacion_9_5.png" /> <br />' });
+var lyr_SNCZIzonasinundacion_9;
+if (typeof json_SNCZIzonasinundacion_9 !== 'undefined') {
+    var format_SNCZIzonasinundacion_9 = new ol.format.GeoJSON();
+    var features_SNCZIzonasinundacion_9 = format_SNCZIzonasinundacion_9.readFeatures(json_SNCZIzonasinundacion_9, 
+                {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:25830'});
+    var jsonSource_SNCZIzonasinundacion_9 = new ol.source.Vector({
+        attributions: ' ',
+    });
+    jsonSource_SNCZIzonasinundacion_9.addFeatures(features_SNCZIzonasinundacion_9);
+    lyr_SNCZIzonasinundacion_9 = new ol.layer.Vector({
+                    declutter: false,
+                    source:jsonSource_SNCZIzonasinundacion_9, 
+                    style: style_SNCZIzonasinundacion_9,
+                    popuplayertitle: 'SNCZI zonas inundacion',
+                    interactive: true,
+        title: 'SNCZI zonas inundacion<br />\
+        <img src="styles/legend/SNCZIzonasinundacion_9_0.png" /> Q Periodo de retorno T10<br />\
+        <img src="styles/legend/SNCZIzonasinundacion_9_1.png" /> Q Periodo de retorno T100<br />\
+        <img src="styles/legend/SNCZIzonasinundacion_9_2.png" /> Q Periodo de retorno T500<br />\
+        <img src="styles/legend/SNCZIzonasinundacion_9_3.png" /> Z.I. FRECUENTE (50 AÑOS)<br />\
+        <img src="styles/legend/SNCZIzonasinundacion_9_4.png" /> Z.I. PROBABILIDAD ALTA (10 AÑOS)<br />\
+        <img src="styles/legend/SNCZIzonasinundacion_9_5.png" /> <br />' });
+} else {
+    lyr_SNCZIzonasinundacion_9 = new ol.layer.Vector({
+                    declutter: false,
+                    source:new ol.source.Vector(),
+                    style: style_SNCZIzonasinundacion_9,
+                    popuplayertitle: 'SNCZI zonas inundacion',
+                    interactive: false,
+                    visible: false,
+        title: 'SNCZI zonas inundacion<br />\
+        <img src="styles/legend/SNCZIzonasinundacion_9_0.png" /> Q Periodo de retorno T10<br />\
+        <img src="styles/legend/SNCZIzonasinundacion_9_1.png" /> Q Periodo de retorno T100<br />\
+        <img src="styles/legend/SNCZIzonasinundacion_9_2.png" /> Q Periodo de retorno T500<br />\
+        <img src="styles/legend/SNCZIzonasinundacion_9_3.png" /> Z.I. FRECUENTE (50 AÑOS)<br />\
+        <img src="styles/legend/SNCZIzonasinundacion_9_4.png" /> Z.I. PROBABILIDAD ALTA (10 AÑOS)<br />\
+        <img src="styles/legend/SNCZIzonasinundacion_9_5.png" /> <br />' });
+}
 var format_PatricovaenChiva_10 = new ol.format.GeoJSON();
 var features_PatricovaenChiva_10 = format_PatricovaenChiva_10.readFeatures(json_PatricovaenChiva_10, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:25830'});
@@ -478,7 +496,7 @@ lyr_EstadoActual_Clasificacion_0.setVisible(true);lyr_EstadoActual_Clasificacion
 lyr_GoogleSatellite_0.setVisible(false);
 lyr_Catastro_1.setVisible(false);
 lyr_OpenStreetMap_2.setVisible(true);
-var layersList = [lyr_GoogleSatellite_0,lyr_Catastro_1,lyr_OpenStreetMap_2,lyr_EstadoActual_Clasificacion_0,lyr_PlaneamVigente_GradoConsolidacion_1,lyr_fore_montes_gestionados_descarga0_2,lyr_Habitatsprotegidos_3,lyr_Microreservas_4,lyr_MontesCatalogados_5,lyr_ParajesMunicipales_6,lyr_TerrenoForestal_7,lyr_PRRPaisajesRelevanciaRegional_8,lyr_SNCZIzonasinundacion_9,lyr_PatricovaenChiva_10,lyr_DPHDeslindado2022_11,lyr_CorredorTerritorialFluvial_12,lyr_CaucesCartografiados_13,lyr_Ferrocarriles_14,lyr_AfeccionesConselleria_15,lyr_AfeccionesDiputacion_16,lyr_Afeccionesferrocarriles_17,lyr_AfeccionesMinisterio_18,lyr_AreasPrioritAves_19,lyr_RedViariaexistente_20,lyr_EquipEnergetico_21,lyr_ViasPecuarias_22,lyr_ViasPecuarias_elementos_23,lyr_Arbolesmonumentales_24,lyr_LimiteTMChiva_25];
+var layersList = [lyr_GoogleSatellite_0,lyr_Catastro_1,lyr_OpenStreetMap_2,lyr_EstadoActual_Clasificacion_0,lyr_PlaneamVigente_GradoConsolidacion_1,lyr_fore_montes_gestionados_descarga0_2,lyr_Habitatsprotegidos_3,lyr_Microreservas_4,lyr_MontesCatalogados_5,lyr_ParajesMunicipales_6,lyr_TerrenoForestal_7,lyr_PRRPaisajesRelevanciaRegional_8,lyr_PatricovaenChiva_10,lyr_DPHDeslindado2022_11,lyr_CorredorTerritorialFluvial_12,lyr_CaucesCartografiados_13,lyr_Ferrocarriles_14,lyr_AfeccionesConselleria_15,lyr_AfeccionesDiputacion_16,lyr_Afeccionesferrocarriles_17,lyr_AfeccionesMinisterio_18,lyr_AreasPrioritAves_19,lyr_RedViariaexistente_20,lyr_EquipEnergetico_21,lyr_ViasPecuarias_22,lyr_ViasPecuarias_elementos_23,lyr_Arbolesmonumentales_24,lyr_LimiteTMChiva_25];
 lyr_EstadoActual_Clasificacion_0.set('fieldAliases', {'cpm': 'cpm', 'municipio': 'municipio', 'expediente': 'expediente', 'descripcio': 'descripcio', 'clas_suelo': 'clas_suelo', 'zon_suelo': 'zon_suelo', 'contenido': 'contenido', 'text_': 'text_', });
 lyr_PlaneamVigente_GradoConsolidacion_1.set('fieldAliases', {'ID': 'ID', 'REGISTRO': 'REGISTRO', 'AUTORES': 'AUTORES', 'APROBACIÓ': 'APROBACIÓ', 'ESTADO': 'ESTADO', 'DESC': 'DESC', 'AREA': 'AREA', });
 lyr_fore_montes_gestionados_descarga0_2.set('fieldAliases', {'provincia': 'provincia', 'df': 'df', 'municipio': 'municipio', 'num_up': 'num_up', 'cup': 'cup', 'texto': 'texto', 'etiquetas': 'etiquetas', 'denominaci': 'denominaci', 'tipo': 'tipo', 'area_del_c': 'area_del_c', 'deslinde': 'deslinde', 'denomina_1': 'denomina_1', 'amojonamie': 'amojonamie', 'superficie': 'superficie', 'pertenenci': 'pertenenci', 'pertenen_1': 'pertenen_1', 'perimetro': 'perimetro', 'hectareas': 'hectareas', 'suma_super': 'suma_super', 'comarca_ca': 'comarca_ca', 'comarca_va': 'comarca_va', 'escaneado_': 'escaneado_', 'num_consul': 'num_consul', 'revision_c': 'revision_c', 'revision_1': 'revision_1', 'etiqueta_k': 'etiqueta_k', 'expt_sstt': 'expt_sstt', 'resol_dg': 'resol_dg', 'carpeta': 'carpeta', 'carpetacma': 'carpetacma', 'informe_re': 'informe_re', 'informe__1': 'informe__1', 'proyecto_o': 'proyecto_o', 'resol_orde': 'resol_orde', 'resol_or_1': 'resol_or_1', 'shape_Leng': 'shape_Leng', 'shape_Area': 'shape_Area', });
