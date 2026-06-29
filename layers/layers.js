@@ -181,43 +181,49 @@ var lyr_PRRPaisajesRelevanciaRegional_8 = new ol.layer.Vector({
                 title: '<img src="styles/legend/PRRPaisajesRelevanciaRegional_8.png" /> PRR PaisajesRelevanciaRegional'
             });
 var lyr_SNCZIzonasinundacion_9;
-if (typeof json_SNCZIzonasinundacion_9 !== 'undefined') {
-    var format_SNCZIzonasinundacion_9 = new ol.format.GeoJSON();
-    var features_SNCZIzonasinundacion_9 = format_SNCZIzonasinundacion_9.readFeatures(json_SNCZIzonasinundacion_9, 
-                {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:25830'});
-    var jsonSource_SNCZIzonasinundacion_9 = new ol.source.Vector({
-        attributions: ' ',
-    });
-    jsonSource_SNCZIzonasinundacion_9.addFeatures(features_SNCZIzonasinundacion_9);
-    lyr_SNCZIzonasinundacion_9 = new ol.layer.Vector({
-                    declutter: false,
-                    source:jsonSource_SNCZIzonasinundacion_9, 
-                    style: style_SNCZIzonasinundacion_9,
-                    popuplayertitle: 'SNCZI zonas inundacion',
-                    interactive: true,
-        title: 'SNCZI zonas inundacion<br />\
-        <img src="styles/legend/SNCZIzonasinundacion_9_0.png" /> Q Periodo de retorno T10<br />\
-        <img src="styles/legend/SNCZIzonasinundacion_9_1.png" /> Q Periodo de retorno T100<br />\
-        <img src="styles/legend/SNCZIzonasinundacion_9_2.png" /> Q Periodo de retorno T500<br />\
-        <img src="styles/legend/SNCZIzonasinundacion_9_3.png" /> Z.I. FRECUENTE (50 AÑOS)<br />\
-        <img src="styles/legend/SNCZIzonasinundacion_9_4.png" /> Z.I. PROBABILIDAD ALTA (10 AÑOS)<br />\
-        <img src="styles/legend/SNCZIzonasinundacion_9_5.png" /> <br />' });
-} else {
-    lyr_SNCZIzonasinundacion_9 = new ol.layer.Vector({
-                    declutter: false,
-                    source:new ol.source.Vector(),
-                    style: style_SNCZIzonasinundacion_9,
-                    popuplayertitle: 'SNCZI zonas inundacion',
-                    interactive: false,
-                    visible: false,
-        title: 'SNCZI zonas inundacion<br />\
-        <img src="styles/legend/SNCZIzonasinundacion_9_0.png" /> Q Periodo de retorno T10<br />\
-        <img src="styles/legend/SNCZIzonasinundacion_9_1.png" /> Q Periodo de retorno T100<br />\
-        <img src="styles/legend/SNCZIzonasinundacion_9_2.png" /> Q Periodo de retorno T500<br />\
-        <img src="styles/legend/SNCZIzonasinundacion_9_3.png" /> Z.I. FRECUENTE (50 AÑOS)<br />\
-        <img src="styles/legend/SNCZIzonasinundacion_9_4.png" /> Z.I. PROBABILIDAD ALTA (10 AÑOS)<br />\
-        <img src="styles/legend/SNCZIzonasinundacion_9_5.png" /> <br />' });
-}
+(function() {
+    try {
+        if (typeof json_SNCZIzonasinundacion_9 !== 'undefined') {
+            var format_SNCZIzonasinundacion_9 = new ol.format.GeoJSON();
+            var features_SNCZIzonasinundacion_9 = format_SNCZIzonasinundacion_9.readFeatures(json_SNCZIzonasinundacion_9, 
+                        {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:25830'});
+            var jsonSource_SNCZIzonasinundacion_9 = new ol.source.Vector({
+                attributions: ' ',
+            });
+            jsonSource_SNCZIzonasinundacion_9.addFeatures(features_SNCZIzonasinundacion_9);
+            lyr_SNCZIzonasinundacion_9 = new ol.layer.Vector({
+                            declutter: false,
+                            source:jsonSource_SNCZIzonasinundacion_9, 
+                            style: style_SNCZIzonasinundacion_9,
+                            popuplayertitle: 'SNCZI zonas inundacion',
+                            interactive: true,
+                title: 'SNCZI zonas inundacion<br />\
+                <img src="styles/legend/SNCZIzonasinundacion_9_0.png" /> Q Periodo de retorno T10<br />\
+                <img src="styles/legend/SNCZIzonasinundacion_9_1.png" /> Q Periodo de retorno T100<br />\
+                <img src="styles/legend/SNCZIzonasinundacion_9_2.png" /> Q Periodo de retorno T500<br />\
+                <img src="styles/legend/SNCZIzonasinundacion_9_3.png" /> Z.I. FRECUENTE (50 AÑOS)<br />\
+                <img src="styles/legend/SNCZIzonasinundacion_9_4.png" /> Z.I. PROBABILIDAD ALTA (10 AÑOS)<br />\
+                <img src="styles/legend/SNCZIzonasinundacion_9_5.png" /> <br />' });
+        } else {
+            throw new Error('json_SNCZIzonasinundacion_9 no disponible');
+        }
+    } catch (err) {
+        lyr_SNCZIzonasinundacion_9 = new ol.layer.Vector({
+                        declutter: false,
+                        source:new ol.source.Vector(),
+                        style: style_SNCZIzonasinundacion_9,
+                        popuplayertitle: 'SNCZI zonas inundacion',
+                        interactive: false,
+                        visible: false,
+            title: 'SNCZI zonas inundacion<br />\
+            <img src="styles/legend/SNCZIzonasinundacion_9_0.png" /> Q Periodo de retorno T10<br />\
+            <img src="styles/legend/SNCZIzonasinundacion_9_1.png" /> Q Periodo de retorno T100<br />\
+            <img src="styles/legend/SNCZIzonasinundacion_9_2.png" /> Q Periodo de retorno T500<br />\
+            <img src="styles/legend/SNCZIzonasinundacion_9_3.png" /> Z.I. FRECUENTE (50 AÑOS)<br />\
+            <img src="styles/legend/SNCZIzonasinundacion_9_4.png" /> Z.I. PROBABILIDAD ALTA (10 AÑOS)<br />\
+            <img src="styles/legend/SNCZIzonasinundacion_9_5.png" /> <br />' });
+    }
+})();
 var format_PatricovaenChiva_10 = new ol.format.GeoJSON();
 var features_PatricovaenChiva_10 = format_PatricovaenChiva_10.readFeatures(json_PatricovaenChiva_10, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:25830'});
